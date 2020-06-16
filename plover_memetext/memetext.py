@@ -6,9 +6,9 @@ from plover.registry import registry
 from plover.formatting import _Context
 
 from plover_memetext.sarcasm import sarcasm
+from plover_memetext.zalgo import zalgo
 
 # TODO documentation
-# TODO ZALGO
 # TODO owo
 # TODO crytyping
 # TODO possibly hook the MODE:RESET?
@@ -26,7 +26,8 @@ class PloverPlugin(Thread):
         self._formatter = None
         self._engine = engine
         self._transformers = {
-            'sarcasm': sarcasm
+            'sarcasm': sarcasm,
+            'zalgo': zalgo
         }
 
     def meme_set(self, ctx: _Context, cmdline):
