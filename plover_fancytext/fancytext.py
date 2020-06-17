@@ -5,19 +5,19 @@ from plover import log
 from plover.registry import registry
 from plover.formatting import _Context
 
-from plover_fancytext.sarcasm import sarcasm
-from plover_fancytext.zalgo import zalgo
+from .sarcasm import sarcasm
+from .zalgo import zalgo
+from .upside import upside
 
 # TODO documentation
 # TODO owo
 # TODO crytyping
-# TODO upside down text?
 # TODO fancy text?
 # TODO possibly hook the MODE:RESET?
 
 
 class PloverPlugin(Thread):
-    """TODO write docstring """
+    """TODO write docstring"""
 
     def __init__(self, engine: StenoEngine) -> None:
         super().__init__()
@@ -29,6 +29,7 @@ class PloverPlugin(Thread):
         self._engine = engine
         self._transformers = {
             'sarcasm': sarcasm,
+            'upside': upside,  # TODO might want a right->left mark?
             'zalgo': zalgo
         }
 
@@ -36,6 +37,7 @@ class PloverPlugin(Thread):
         if cmdline in self._transformers:
             self._formatter = self._transformers[cmdline]
         else:
+            # might want to allow 'same-again' as a toggle?
             self._formatter = None
         return ctx.new_action()
 
