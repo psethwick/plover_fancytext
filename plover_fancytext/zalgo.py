@@ -119,7 +119,9 @@ MARKS = [
 class Zalgo():
 
     def add_combining_marks(self, c: str) -> str:
-        return c + random.choice(MARKS)
+        for m in random.sample(MARKS, random.randrange(1, 3)):
+            c += m
+        return c
 
     def __call__(self, str) -> str:
         if str:
