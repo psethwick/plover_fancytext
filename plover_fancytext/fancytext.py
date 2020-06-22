@@ -5,39 +5,42 @@ from plover import log
 from plover.registry import registry
 from plover.formatting import _Context
 
-from .sarcasm import sarcasm
+from .randomcap import randomcap
 from .zalgo import zalgo
-from .upside import upside
+
+from .substitute import Substitute
+from .character_helpers import UPSIDE_DOWN_MAP
 
 # TODO documentation
 # TODO owo
 # TODO crytyping
-# TODO fancy text?
-# TODO possibly hook the MODE:RESET?
+# TODO bubble
+# TODO medieval
+# TODO might want a right->left mark on upside down?
 
 
 class PloverPlugin(Thread):
-    """TODO write docstring"""
 
     def __init__(self, engine: StenoEngine) -> None:
         super().__init__()
 
         log.info("FANCY_INIT")
-        registry.register_plugin('meta', 'fancytext_set', self.meme_set)
+        registry.register_plugin('meta', 'fancytext_set', self.fancy_set)
 
         self._formatter = None
         self._engine = engine
         self._transformers = {
-            'sarcasm': sarcasm,
-            'upside': upside,  # TODO might want a right->left mark?
+            'randomcap': randomcap,
+            'upsidedown': Substitute(UPSIDE_DOWN_MAP),
             'zalgo': zalgo
         }
 
     def fancy_set(self, ctx: _Context, cmdline):
         if cmdline in self._transformers:
-            self._formatter = self._transformers[cmdline]
+            # to allow toggling
+            if self._formatter != self._transformers[cmdline]:
+                self._formatter = self._transformers[cmdline]
         else:
-            # might want to allow 'same-again' as a toggle?
             self._formatter = None
         return ctx.new_action()
 

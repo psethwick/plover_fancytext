@@ -1,4 +1,10 @@
-FLIPMAP = {
+VOWELS = ['a', 'e', 'i', 'o', 'u', 'y']
+
+CONSONANTS = ['b', 'c', 'd', 'f', 'g', 'h', 'j',
+              'k', 'l', 'm', 'n', 'p', 'q', 'r',
+              's', 't', 'v', 'w', 'x', 'z']
+
+UPSIDE_DOWN_MAP = {
     'a': '\u0250',
     'b': '\u0071',
     'c': '\u0254',
@@ -52,18 +58,3 @@ FLIPMAP = {
     'Y': '\u2144',
     'Z': '\u005A'
 }
-
-
-class UpsideDown:
-
-    def flip(self, c):
-        if c in FLIPMAP:
-            return FLIPMAP[c]
-        else:
-            return c
-
-    def __call__(self, str) -> str:
-        return ''.join(self.flip(c) for c in str)
-
-
-upside = UpsideDown()

@@ -1,7 +1,7 @@
 import random
 
 
-class Sarcasm():
+class RandomCap():
 
     def cap_randomly(self, c: str) -> str:
         if (random.random() > 0.5):
@@ -14,4 +14,4 @@ class Sarcasm():
         return None
 
 
-sarcasm = Sarcasm()
+randomcap = RandomCap()
