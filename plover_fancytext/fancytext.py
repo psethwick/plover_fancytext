@@ -9,15 +9,15 @@ from .randomcap import randomcap
 from .zalgo import zalgo
 
 from .substitute import Substitute
-from .character_helpers import UPSIDE_DOWN_MAP
+from .character_helpers import BUBBLE_MAP, UPSIDE_DOWN_MAP, MEDIEVAL_MAP
 
-# TODO documentation
-# TODO owo
-# TODO crytyping
-# TODO bubble
-# TODO medieval
-# TODO might want a right->left mark on upside down?
-
+# TODO bug report
+# assertion error here in formatting.py (line 455):
+# self.appended_text = self.appended_text[:-replaced]
+#
+# I think it's related to suffix folding on a different stroke
+#
+# TODO find a clean way to deal with text direction for upside down
 
 class PloverPlugin(Thread):
 
@@ -30,6 +30,8 @@ class PloverPlugin(Thread):
         self._formatter = None
         self._engine = engine
         self._transformers = {
+            'bubble': Substitute(BUBBLE_MAP),
+            'medieval': Substitute(MEDIEVAL_MAP),
             'randomcap': randomcap,
             'upsidedown': Substitute(UPSIDE_DOWN_MAP),
             'zalgo': zalgo
