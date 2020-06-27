@@ -1,3 +1,6 @@
+DIR_LEFT = '\u200F'
+DIR_RIGHT = '\u200E'
+
 MEDIEVAL_MAP = {
     'a': '𝖆',
     'b': '𝖇',

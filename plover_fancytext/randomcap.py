@@ -1,7 +1,9 @@
 import random
 
+from .fancybase import FancyBase
 
-class RandomCap():
+
+class RandomCap(FancyBase):
 
     def cap_randomly(self, c: str) -> str:
         if (random.random() > 0.5):
@@ -12,6 +14,3 @@ class RandomCap():
         if str:
             return ''.join(self.cap_randomly(s) for s in str)
         return None
-
-
-randomcap = RandomCap()
