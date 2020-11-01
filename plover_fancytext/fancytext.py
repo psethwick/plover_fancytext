@@ -8,7 +8,7 @@ from plover.formatting import _Context
 from .randomcap import RandomCap
 from .zalgo import Zalgo
 from .substitute import Substitute
-from .character_helpers import BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP
+from .character_helpers import BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP, FULLWIDTH_MAP
 from .character_helpers import DIR_LEFT, DIR_RIGHT
 
 
@@ -27,6 +27,7 @@ class PloverPlugin(Thread):
         self.transformers = {
             'bubble': Substitute(BUBBLE_MAP),
             'medieval': Substitute(MEDIEVAL_MAP),
+            'fullwidth': Substitute(FULLWIDTH_MAP),
             'randomcap': RandomCap(),
             'upsidedown': Substitute(UPSIDE_DOWN_MAP, DIR_LEFT, DIR_RIGHT),
             'zalgo': Zalgo()
