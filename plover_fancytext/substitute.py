@@ -1,22 +1,7 @@
-from .fancybase import FancyBase
+class Substitute():
 
-
-class Substitute(FancyBase):
-
-    def __init__(self, character_map, start=None, end=None):
+    def __init__(self, character_map):
         self._character_map = character_map
-        self._start = None
-        self._end = None
-        if start:
-            self._start = start
-        if end:
-            self._end = end
-
-    def fancy_start(self):
-        return self._start
-
-    def fancy_end(self):
-        return self._end
 
     def swap(self, c: str) -> str:
         if c in self._character_map:

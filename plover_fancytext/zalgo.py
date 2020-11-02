@@ -1,10 +1,9 @@
 import random
 
 from .character_helpers import COMBINING_MARKS
-from .fancybase import FancyBase
 
 
-class Zalgo(FancyBase):
+class Zalgo():
 
     def add_combining_marks(self, c: str) -> str:
         for m in random.sample(COMBINING_MARKS, random.randrange(1, 3)):
