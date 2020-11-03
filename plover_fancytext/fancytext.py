@@ -5,8 +5,8 @@ from plover import log
 from plover.registry import registry
 from plover.formatting import _Context
 
-from .randomcap import RandomCap
 from .zalgo import Zalgo
+from .sarcasm import Sarcasm
 from .substitute import Substitute
 from .character_helpers import \
     BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP, FULLWIDTH_MAP
@@ -26,7 +26,7 @@ class PloverPlugin(Thread):
             'bubble': Substitute(BUBBLE_MAP),
             'medieval': Substitute(MEDIEVAL_MAP),
             'fullwidth': Substitute(FULLWIDTH_MAP),
-            'randomcap': RandomCap(),
+            'sarcasm': Sarcasm(),
             'upsidedown': Substitute(UPSIDE_DOWN_MAP),
             'zalgo': Zalgo()
         }
@@ -54,9 +54,9 @@ class PloverPlugin(Thread):
             log.info(new)
 
             for t in new:
-                if t.prev_replace:
-                    t.prev_replace = self.formatter(t.prev_replace)
-                if t.word:
-                    t.word = (self.formatter(t.word))
                 if t.text:
                     t.text = (self.formatter(t.text))
+                if t.word:
+                    t.word = (self.formatter(t.word))
+                if t.prev_replace:
+                    t.prev_replace = self.formatter(t.prev_replace)

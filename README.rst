@@ -16,7 +16,7 @@ Examples:
 - bubble:
 - medieval:
 - fullwidth:
-- randomcap:
+- sarcasm:
 - upsidedown:
 - zalgo:
 
@@ -45,7 +45,7 @@ Here's what I use (``23*9`` is more easily read as ``#TP*T``)::
     "23*9/PW-UB": "{:fancytext_set:bubble}",
     "23*9/PH-ED": "{:fancytext_set:medieval}",
     "23*9/TP-UL": "{:fancytext_set:fullwidth}",
-    "23*9/SA-RBG": "{:fancytext_set:randomcap}",
+    "23*9/SA-RBG": "{:fancytext_set:sarcasm}",
     "23*9/-UP": "{:fancytext_set:upsidedown}",
     "23*9/STKPWA-L": "{:fancytext_set:zalgo}",
     "23*9/23*9": "{:fancytext_set}"
