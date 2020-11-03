@@ -2,7 +2,7 @@
 Fancy Text Plugin for Plover
 ****************************
 
-This is a plugin for the open source stenography program `Plover <https://www.openstenoproject.org/plover/>`
+This is a plugin for the open source stenography program `Plover <https://www.openstenoproject.org/plover/>`_
 
 Requires Plover version 4.0.0 or later
 
@@ -59,7 +59,7 @@ Contributing
 
 Want a new mode? Having problems?
 
-Head to the `open source repository <https://github.com/psethwick/plover_fancytext>`
+Head to the `open source repository <https://github.com/psethwick/plover_fancytext>`_
 
 Feel free to:
 - Raise an issue
