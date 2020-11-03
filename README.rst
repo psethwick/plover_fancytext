@@ -13,6 +13,7 @@ What it does
 Allows you to use Plover to output text in various (mostly joke, mostly unicode) text formats
 
 Examples:
+
 * bubble:  ⓑⓤⓑⓑⓛⓔ
 * medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
 * fullwidth:  ｖａｐｏｒｗａｖｅ
