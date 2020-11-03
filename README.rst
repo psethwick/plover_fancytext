@@ -62,5 +62,6 @@ Want a new mode? Having problems?
 Head to the `open source repository <https://github.com/psethwick/plover_fancytext>`_
 
 Feel free to:
-- Raise an issue
-- Open a pull request, new modes accepted!
+
+* Raise an issue
+* Open a pull request, new modes accepted!
