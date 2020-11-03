@@ -13,12 +13,12 @@ What it does
 Allows you to use Plover to output text in various (mostly joke, mostly unicode) text formats
 
 Examples:
-- bubble:  ⓑⓤⓑⓑⓛⓔ
-- medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
-- fullwidth:  ｖａｐｏｒｗａｖｅ
-- sarcasm:  wELl ThIs IS cONvEnIeNt
-- upsidedown:  ndsᴉpǝ poʍu
-- zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
+* bubble:  ⓑⓤⓑⓑⓛⓔ
+* medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
+* fullwidth:  ｖａｐｏｒｗａｖｅ
+* sarcasm:  wELl ThIs IS cONvEnIeNt
+* upsidedown:  ndsᴉpǝ poʍu
+* zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 
 Installing
 ##########
