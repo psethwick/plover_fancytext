@@ -13,12 +13,12 @@ What it does
 Allows you to use Plover to output text in various (mostly joke, mostly unicode) text formats
 
 Examples:
-- bubble:
-- medieval:
-- fullwidth:
-- sarcasm:
-- upsidedown:
-- zalgo:
+- bubble:  ⓑⓤⓑⓑⓛⓔ
+- medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
+- fullwidth:  ｖａｐｏｒｗａｖｅ
+- sarcasm:  wELl ThIs IS cONvEnIeNt
+- upsidedown:  ndsᴉpǝ poʍu
+- zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 
 Installing
 ##########
@@ -39,7 +39,9 @@ You'll need to add Plover dictionary entries to toggle on/off the modes
 
 The format is ``{:fancytext_set:<mode>}`` to turn on the mode and simply ``{:fancytext_set}`` to turn off any mode.
 
-Here's what I use (``23*9`` is more easily read as ``#TP*T``)::
+Here's what I use (``23*9`` is more easily read as ``#TP*T``):
+::
+
     {
     "23*9": "{#}",
     "23*9/PW-UB": "{:fancytext_set:bubble}",
