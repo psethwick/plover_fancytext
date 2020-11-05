@@ -53,8 +53,17 @@ Here's what I use (``23*9`` is more easily read as ``#TP*T``):
     "23*9/STKPWA-L": "{:fancytext_set:zalgo}"
     }
 
+Mode Notes
+##########
+
 The  z̶͉a̕l̬ḡ͙o̕ m͏̎o̬̪d̜e̝̹ can also take two arguments for the minimum and maximum number
-of combining marks. Example `{:fancytext_set:zalgo:10:15}` for quite a lot of  z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ
+of combining marks. Example `{:fancytext_set:zalgo:10:15}` for quite a lot of
+z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅ l̵̤̟̜͎͍̠̭̽̿͂ͬͩ͜ģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ. For reference the default is min=1, max=3.
+
+You may want the 　ｆｕｌｌ　ｗｉｄｔｈ　mode to use a full-width space. This can be done by
+setting space in the same entry: `{:fancytext_set:fullwidth}{MODE:SET_SPACE:　}`.
+If you do this you'll probably also want to add `{MODE:RESET}` to your entry which turns
+off the mode.
 
 Contributing
 ############
