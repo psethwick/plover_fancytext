@@ -57,17 +57,17 @@ Mode Notes
 ##########
 
 The  z̶͉a̕l̬ḡ͙o̕ m͏̎o̬̪d̜e̝̹ can also take two arguments for the minimum and maximum number
-of combining marks. Example `{:fancytext_set:zalgo:10:15}` for quite a lot of
+of combining marks. Example ``{:fancytext_set:zalgo:10:15}`` for quite a lot of
 z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅ l̵̤̟̜͎͍̠̭̽̿͂ͬͩ͜ģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ. For reference the default is min=1, max=3.
 
 You may want the 　ｆｕｌｌ　ｗｉｄｔｈ　mode to use a full-width space. This can be done by
-setting space in the same entry: `{:fancytext_set:fullwidth}{MODE:SET_SPACE:　}`.
-If you do this you'll probably also want to add `{MODE:RESET}` to your entry which turns
+setting space in the same entry: ``{:fancytext_set:fullwidth}{MODE:SET_SPACE:　}``.
+If you do this you'll probably also want to add ``{MODE:RESET}`` to your entry which turns
 off the mode.
 
 This trick can also be applied to the upside down mode.
 Include unicode 202e (right to left mark) as well as a space character for um, a
-good time. You'll definitely want `{MODE:RESET}` on this one, and you might want
+good time. You'll definitely want ``{MODE:RESET}`` on this one, and you might want
 to add unicode 202d (left to right mark) to it as well. You don't want to use
 these marks anywhere where text needs to be precisely correct, but should be
 fine in many places.
