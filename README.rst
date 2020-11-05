@@ -44,15 +44,17 @@ Here's what I use (``23*9`` is more easily read as ``#TP*T``):
 ::
 
     {
-    "23*9": "{#}",
+    "23*9": "{:fancytext_set:off}",
     "23*9/PW-UB": "{:fancytext_set:bubble}",
     "23*9/PH-ED": "{:fancytext_set:medieval}",
-    "23*9/TP-UL": "{:fancytext_set:fullwidth}",
     "23*9/SA-RBG": "{:fancytext_set:sarcasm}",
+    "23*9/SRA-EUP": "{:fancytext_set:fullwidth}",
     "23*9/-UP": "{:fancytext_set:upsidedown}",
-    "23*9/STKPWA-L": "{:fancytext_set:zalgo}",
-    "23*9/23*9": "{:fancytext_set}"
+    "23*9/STKPWA-L": "{:fancytext_set:zalgo}"
     }
+
+The  z̶͉a̕l̬ḡ͙o̕ m͏̎o̬̪d̜e̝̹ can also take two arguments for the minimum and maximum number
+of combining marks. Example `{:fancytext_set:zalgo:10:15}` for quite a lot of  z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ
 
 Contributing
 ############

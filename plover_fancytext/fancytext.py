@@ -23,17 +23,20 @@ class PloverPlugin(Thread):
         self.formatter = None
         self.engine = engine
         self.transformers = {
-            'bubble': Substitute(BUBBLE_MAP),
-            'medieval': Substitute(MEDIEVAL_MAP),
-            'fullwidth': Substitute(FULLWIDTH_MAP),
-            'sarcasm': Sarcasm(),
-            'upsidedown': Substitute(UPSIDE_DOWN_MAP),
-            'zalgo': Zalgo()
+            'bubble': lambda: Substitute(BUBBLE_MAP),
+            'medieval': lambda: Substitute(MEDIEVAL_MAP),
+            'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
+            'sarcasm': lambda: Sarcasm(),
+            'upsidedown': lambda: Substitute(UPSIDE_DOWN_MAP),
+            'zalgo': lambda minimum=1, maximum=3: Zalgo(int(minimum),
+                                                        int(maximum))
         }
 
     def fancy_set(self, ctx: _Context, cmdline):
-        if cmdline in self.transformers:
-            self.formatter = self.transformers[cmdline]
+        args = cmdline.split(':')
+        mode = args.pop(0)
+        if mode in self.transformers:
+            self.formatter = self.transformers[mode](*args)
         else:
             self.formatter = None
 
@@ -49,9 +52,6 @@ class PloverPlugin(Thread):
 
     def translated(self, old, new):
         if self.formatter:
-
-            log.info(old)
-            log.info(new)
 
             for t in new:
                 if t.text:

@@ -5,8 +5,15 @@ from .character_helpers import COMBINING_MARKS
 
 class Zalgo():
 
+    def __init__(self, minimum, maximum):
+        self.minimum = minimum
+        self.maximum = maximum
+        assert self.minimum <= self.maximum
+
     def add_combining_marks(self, c: str) -> str:
-        for m in random.sample(COMBINING_MARKS, random.randrange(1, 3)):
+        for m in random.sample(
+                COMBINING_MARKS,
+                random.randrange(self.minimum, self.maximum)):
             c += m
         return c
 
