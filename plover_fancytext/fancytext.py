@@ -6,6 +6,7 @@ from plover.registry import registry
 from plover.formatting import _Context
 
 from .zalgo import Zalgo
+from .crytyping import CryTyping
 from .sarcasm import Sarcasm
 from .substitute import Substitute
 from .character_helpers import \
@@ -24,6 +25,7 @@ class PloverPlugin(Thread):
         self.engine = engine
         self.transformers = {
             'bubble': lambda: Substitute(BUBBLE_MAP),
+            'cry': lambda: CryTyping(),
             'medieval': lambda: Substitute(MEDIEVAL_MAP),
             'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
             'sarcasm': lambda: Sarcasm(),

@@ -348,3 +348,5 @@ COMBINING_MARKS = [
     '\u036E',  # ͮ 	878 	Combining Latin Small Letter V
     '\u036F',  # ͯ 	879 	Combining Latin Small Letter X
 ]
+
+LETTERS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'

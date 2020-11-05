@@ -1,10 +1,10 @@
-from .character_helpers import CONSONENT_RE, VOWEL_RE
+from .character_helpers import CONSONANT_RE, VOWEL_RE
 
 
 class Sarcasm():
 
     # the first letter must be a lower
-    # Every second consonent must be upper
+    # Every second consonant must be upper
     # if vowel after a lower it must be upper
     # if vowel comes after an upper it must be lower
 
@@ -13,7 +13,7 @@ class Sarcasm():
 
     def reset_state(self):
         self.first_letter = True
-        self.capped_last_consonent = False
+        self.capped_last_consonant = False
         self.capped_last = False
 
     def case_letter(self, c: str) -> str:
@@ -22,19 +22,19 @@ class Sarcasm():
             if VOWEL_RE.match(c):
                 self.first_letter = False
 
-            if CONSONENT_RE.match(c):
+            if CONSONANT_RE.match(c):
                 self.first_letter = False
             return c.lower()
 
-        # consonents alternate
-        if CONSONENT_RE.match(c):
-            if self.capped_last_consonent:
-                self.capped_last_consonent = False
+        # consonants alternate
+        if CONSONANT_RE.match(c):
+            if self.capped_last_consonant:
+                self.capped_last_consonant = False
                 self.capped_last = False
                 return c.lower()
 
             self.capped_last = True
-            self.capped_last_consonent = True
+            self.capped_last_consonant = True
             return c.upper()
 
         if VOWEL_RE.match(c):
