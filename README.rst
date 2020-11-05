@@ -38,7 +38,7 @@ Usage
 
 You'll need to add Plover dictionary entries to toggle on/off the modes
 
-The format is ``{:fancytext_set:<mode>}`` to turn on the mode and simply ``{:fancytext_set}`` to turn off any mode.
+The format is ``{:fancytext_set:<mode>}`` to turn on the mode and simply ``{:fancytext_set:off}`` to turn off any mode.
 
 Here's what I use (``23*9`` is more easily read as ``#TP*T``):
 ::
@@ -64,6 +64,15 @@ You may want the 　ｆｕｌｌ　ｗｉｄｔｈ　mode to use a full-width sp
 setting space in the same entry: `{:fancytext_set:fullwidth}{MODE:SET_SPACE:　}`.
 If you do this you'll probably also want to add `{MODE:RESET}` to your entry which turns
 off the mode.
+
+This trick can also be applied to the upside down mode.
+Include unicode 202e (right to left mark) as well as a space character for um, a
+good time. You'll definitely want `{MODE:RESET}` on this one, and you might want
+to add unicode 202d (left to right mark) to it as well. You don't want to use
+these marks anywhere where text needs to be precisely correct, but should be
+fine in many places.
+I've not included it as part of the mode because it is definitely an acquired
+taste and can end up with you having text backwards after you turn the mode off
 
 Contributing
 ############
