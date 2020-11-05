@@ -25,7 +25,7 @@ class PloverPlugin(Thread):
         self.engine = engine
         self.transformers = {
             'bubble': lambda: Substitute(BUBBLE_MAP),
-            'cry': lambda: CryTyping(),
+            'crytyping': lambda: CryTyping(),
             'medieval': lambda: Substitute(MEDIEVAL_MAP),
             'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
             'sarcasm': lambda: Sarcasm(),
