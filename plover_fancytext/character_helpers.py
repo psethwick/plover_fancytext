@@ -1,3 +1,9 @@
+import re
+
+CONSONANT_RE = re.compile("[BCDFGHJKLMNPQRSTVWXYZbcdfghjklmnpqrstvwxyz]")
+
+VOWEL_RE = re.compile("[aeiouAEIOU]")
+
 MEDIEVAL_MAP = {
     'a': '𝖆',
     'b': '𝖇',
