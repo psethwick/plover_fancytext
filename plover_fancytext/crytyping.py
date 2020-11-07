@@ -1,9 +1,10 @@
 import random
 
+from .fancybase import FancyBase
 from .character_helpers import LETTERS
 
 
-class CryTyping():
+class CryTyping(FancyBase):
 
     # swapping two letters
     # adding a random letter

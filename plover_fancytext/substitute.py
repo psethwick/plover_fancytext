@@ -1,4 +1,7 @@
-class Substitute():
+from .fancybase import FancyBase
+
+
+class Substitute(FancyBase):
 
     def __init__(self, character_map):
         self._character_map = character_map

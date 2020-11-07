@@ -1,19 +1,23 @@
 import random
 
 from .character_helpers import COMBINING_MARKS
+from .fancybase import FancyBase
 
 
-class Zalgo():
+class Zalgo(FancyBase):
 
     def __init__(self, minimum, maximum):
         self.minimum = minimum
         self.maximum = maximum
         assert self.minimum <= self.maximum
-        # In order for suffix folding to work, going to need some determinism
-        # otherwise Assert Failed! in formattiny.py
+        self.reset_state()
+
+    def reset_state(self):
         self.translations = {}
 
     def add_combining_marks(self, c: str) -> str:
+        # In order for suffix folding to work, going to need some determinism
+        # otherwise Assert Failed! in formattiny.py
         if c in self.translations:
             return self.translations[c]
 

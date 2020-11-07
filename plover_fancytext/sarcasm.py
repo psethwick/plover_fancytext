@@ -1,7 +1,8 @@
 from .character_helpers import CONSONANT_RE, VOWEL_RE
+from .fancybase import FancyBase
 
 
-class Sarcasm():
+class Sarcasm(FancyBase):
 
     # the first letter must be a lower
     # Every second consonant must be upper

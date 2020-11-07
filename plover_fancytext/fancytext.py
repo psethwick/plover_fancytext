@@ -55,10 +55,13 @@ class PloverPlugin(Thread):
     def translated(self, old, new):
         if self.formatter:
 
-            for t in new:
-                if t.text:
-                    t.text = (self.formatter(t.text))
-                if t.word:
-                    t.word = (self.formatter(t.word))
-                if t.prev_replace:
-                    t.prev_replace = self.formatter(t.prev_replace)
+            for a in new:
+                if a.combo == 'Return':
+                    self.formatter.reset_state()
+
+                if a.text:
+                    a.text = (self.formatter(a.text))
+                if a.word:
+                    a.word = (self.formatter(a.word))
+                if a.prev_replace:
+                    a.prev_replace = self.formatter(a.prev_replace)
