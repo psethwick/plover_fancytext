@@ -1,9 +1,21 @@
 import unittest
 import inspect
 
-from plover.formatting import _Action, _Context
-
 from .fancytext import PloverPlugin
+
+
+class FakeAction:
+    def __init__(self, prev_replace='', word=None, text=None, combo=None):
+        self.word = word
+        self.prev_replace = prev_replace
+        self.text = text
+        self.combo = combo
+
+    def __eq__(self, other):
+        return self.word == other.word and \
+               self.prev_replace == other.prev_replace and \
+               self.text == other.text and \
+               self.combo == other.combo
 
 
 class FakeContext():
@@ -95,7 +107,7 @@ class TestPloverPlugin(unittest.TestCase):
         return p
 
     def _get_action(self):
-        return _Action(text="text", word="text", prev_replace="")
+        return FakeAction(text="text", word="text", prev_replace="")
 
     def _get_return_action(self):
-        return _Action(combo="Return")
+        return FakeAction(combo="Return")
