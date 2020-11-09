@@ -6,6 +6,8 @@ This is a plugin for the open source stenography program `Plover <https://www.op
 
 Requires Plover version 4.0.0 or later
 
+.. image:: https://img.shields.io/pypi/dm/plover_fancytext.svg
+
 What it does
 ############
 
