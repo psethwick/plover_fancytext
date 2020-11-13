@@ -22,7 +22,7 @@ jobs:
       uses: butlerlogic/action-autotag@stable
       with:
         strategy: regex
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        tag_prefix: ''
         root: "setup.cfg"
         regex_pattern: "version = (.*)$"
     - name: Create Release
