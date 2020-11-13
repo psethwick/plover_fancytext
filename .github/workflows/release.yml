@@ -56,5 +56,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
       run: |
         python setup.py sdist bdist_wheel
-        # temp not do stuff while testing
-        #twine upload dist/*
+        twine upload dist/*
