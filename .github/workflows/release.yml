@@ -21,6 +21,7 @@ jobs:
       id: autotagger
       uses: butlerlogic/action-autotag@stable
       with:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         strategy: regex
         tag_prefix: ''
         root: "setup.cfg"
