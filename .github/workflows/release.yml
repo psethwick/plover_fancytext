@@ -33,10 +33,10 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ steps.id.outputs.tagname }}
-        release_name: Release ${{ steps.id.outputs.tagname }}
+        tag_name: ${{ steps.autotagger.outputs.tagname }}
+        release_name: Release ${{ steps.autotagger.outputs.tagname }}
         body: |
-          ${{ github.event.head_commit.message }}
+          ${{ steps.autotagger.outputs.tagmessage }}
         draft: false
         prerelease: false 
     - name: Set up Python
