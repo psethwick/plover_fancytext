@@ -25,7 +25,7 @@ jobs:
         strategy: regex
         tag_prefix: ''
         root: "setup.cfg"
-        regex_pattern: "version = ([0-9\.]{5}([-\+][\w\.0-9]+)?)"
+        regex_pattern: "version = ([0-9\\.]{5}([-\\+][\\w\\.0-9]+)?)"
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
