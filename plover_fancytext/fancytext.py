@@ -7,6 +7,7 @@ from plover.registry import registry
 from plover.formatting import _Context, _Action
 
 from .zalgo import Zalgo
+from .uwu import Uwu
 from .crytyping import CryTyping
 from .sarcasm import Sarcasm
 from .substitute import Substitute
@@ -29,6 +30,8 @@ class PloverPlugin(Thread):
             'crytyping': lambda: CryTyping(),
             'medieval': lambda: Substitute(MEDIEVAL_MAP),
             'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
+            'uwu': lambda: Uwu(False),
+            'UwU': lambda: Uwu(True),
             'sarcasm': lambda: Sarcasm(),
             'upsidedown': lambda: Substitute(UPSIDE_DOWN_MAP),
             'zalgo': lambda minimum=1, maximum=3: Zalgo(int(minimum),
