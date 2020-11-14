@@ -28,6 +28,8 @@ Examples:
 * sarcasm:  wELl ThIs IS cONvEnIeNt
 * upsidedown:  ndsᴉpǝ poʍu
 * zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
+* uwu:  Hewwoooo <3 this aww you nyeed.
+* UwU:  uwuwuwu, buwut mowe :3 Nyote that this may get in the way of conwewsations :3 :3 :3
 
 Installing
 ##########
