@@ -27,9 +27,9 @@ Examples:
 * medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
 * sarcasm:  wELl ThIs IS cONvEnIeNt
 * upsidedown:  ndsᴉpǝ poʍu
-* zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 * uwu:  Hewwoooo <3 this aww you nyeed.
 * UwU:  uwuwuwu, buwut mowe :3 Nyote that this may get in the way of conwewsations :3 :3 :3
+* zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 
 Installing
 ##########
@@ -61,6 +61,8 @@ Here's what I use (``23*9`` is more easily read as ``#TP*T``):
     "23*9/PH-ED": "{:fancytext_set:medieval}",
     "23*9/SA-RBG": "{:fancytext_set:sarcasm}",
     "23*9/-UP": "{:fancytext_set:upsidedown}",
+    "23*9/AO-U": "{:fancytext_set:uwu}",
+    "23*9/AO*U": "{:fancytext_set:UwU}",
     "23*9/STKPWA-L": "{:fancytext_set:zalgo}"
     }
 
