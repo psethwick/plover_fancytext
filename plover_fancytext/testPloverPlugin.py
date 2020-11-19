@@ -96,13 +96,28 @@ class TestPloverPlugin(unittest.TestCase):
         self.assertEqual(new[0].text, "𝕱")
 
     def test_plugged_fullwidth(self):
-        pass
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "fullwidth")
+        new = self._get_action_return("F")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "\uFF26")
 
     def test_plugged_uwu(self):
-        pass
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "uwu")
+        new = self._get_action_return("McNugget")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "McNyugget")
 
     def test_plugged_uwu_intense(self):
-        pass
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "UwU")
+        new = self._get_action_return(".")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, " :3")
 
     def test_plugged_sarcasm(self):
         p = self._set_up_plugin()

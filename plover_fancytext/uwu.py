@@ -17,20 +17,12 @@ class Uwu(FormatterBase):
     def __init__(self, intense: bool):
         self.intense = intense
 
-    def uwuify(self, string: str) -> str:
-        string = re.sub("([nN])([aeiouAEIOU])", r"\1y\2", string)
-        string = string \
-            .replace("tute", "tewt") \
-            .replace("Hello", "Hewwoooo <3") \
-            .replace("yes", "yaww") \
-            .replace("no", "nouu")
-        return ''.join([self.uwuify_char(char) for char in string])
-
     def uwuify_char(self, char: str) -> str:
         result = self.substitute_with_map(UWU_SUBSTITUTIONS, char)
         if self.intense:
             result = self.substitute_with_map(INTENSE_UWU_SUBSTITUTIONS,
                                               result)
+        return result
 
     def substitute_with_map(self, substitutions, char: str) -> str:
         result = substitutions.get(char.lower())
@@ -38,12 +30,14 @@ class Uwu(FormatterBase):
             return char
         elif char.isupper():
             return result.capitalize()
-        else:
-            return result
 
         return result
 
     def format(self, string: str) -> str:
-        if string:
-            return self.uwuify(string)
-        return None
+        string = re.sub("([nN])([aeiouAEIOU])", r"\1y\2", string)
+        string = string \
+            .replace("tute", "tewt") \
+            .replace("Hello", "Hewwoooo <3") \
+            .replace("yes", "yaww") \
+            .replace("no", "nouu")
+        return ''.join([self.uwuify_char(char) for char in string])
