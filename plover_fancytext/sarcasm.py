@@ -1,8 +1,8 @@
 from .character_helpers import CONSONANT_RE, VOWEL_RE
-from .fancybase import FancyBase
+from .formatterbase import FormatterBase
 
 
-class Sarcasm(FancyBase):
+class Sarcasm(FormatterBase):
 
     # the first letter must be a lower
     # Every second consonant must be upper
@@ -48,7 +48,7 @@ class Sarcasm(FancyBase):
 
         return c
 
-    def __call__(self, str) -> str:
+    def format(self, str) -> str:
         if str:
             return ''.join(self.case_letter(s) for s in str)
         return None

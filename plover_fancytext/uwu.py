@@ -1,5 +1,5 @@
 import re
-from .fancybase import FancyBase
+from .formatterbase import FormatterBase
 
 UWU_SUBSTITUTIONS = {
     "l": "w",
@@ -13,7 +13,7 @@ INTENSE_UWU_SUBSTITUTIONS = {
 }
 
 
-class Uwu(FancyBase):
+class Uwu(FormatterBase):
     def __init__(self, intense: bool):
         self.intense = intense
 
@@ -43,7 +43,7 @@ class Uwu(FancyBase):
 
         return result
 
-    def __call__(self, string: str) -> str:
+    def format(self, string: str) -> str:
         if string:
             return self.uwuify(string)
         return None
