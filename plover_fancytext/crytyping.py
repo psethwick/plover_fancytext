@@ -1,10 +1,13 @@
+from typing import List
 import random
 
-from .fancybase import FancyBase
+from .formatterbase import FormatterBase
 from .character_helpers import LETTERS
 
+from plover.formatting import _Action
 
-class CryTyping(FancyBase):
+
+class CryTyping(FormatterBase):
 
     # swapping two letters
     # adding a random letter
@@ -60,10 +63,22 @@ class CryTyping(FancyBase):
             o += random.choice(LETTERS)
         return o
 
-    def __call__(self, str) -> str:
+    def format(self, str) -> str:
         if str:
             letters = (self.letter_operations(c)
                        for c in str)
             self.reset_state()  # it's ok if we lose a letter
             return ''.join(letters)
         return None
+
+    def process_actions(self, new: List[_Action]):
+        for a in new:
+            if a.text:
+                a.text = (self.format(a.text))
+            if a.word:
+                a.word = (self.format(a.word))
+            if a.prev_replace:
+                # if this doesn't match the end of the previous action
+                # then plover will throw assertion errors
+                # galaxy brain: just get rid of it
+                a.prev_replace = None

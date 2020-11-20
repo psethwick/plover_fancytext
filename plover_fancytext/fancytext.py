@@ -30,8 +30,8 @@ class PloverPlugin(Thread):
             'crytyping': lambda: CryTyping(),
             'medieval': lambda: Substitute(MEDIEVAL_MAP),
             'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
-            'uwu': lambda: Uwu(False),
-            'UwU': lambda: Uwu(True),
+            'uwu': lambda: Uwu(intense=False),
+            'UwU': lambda: Uwu(intense=True),
             'sarcasm': lambda: Sarcasm(),
             'upsidedown': lambda: Substitute(UPSIDE_DOWN_MAP),
             'zalgo': lambda minimum=1, maximum=3: Zalgo(int(minimum),
@@ -58,14 +58,4 @@ class PloverPlugin(Thread):
 
     def translated(self, old: List[_Action], new: List[_Action]) -> None:
         if self.formatter:
-
-            for a in new:
-                if a.combo == 'Return':
-                    self.formatter.reset_state()
-
-                if a.text:
-                    a.text = (self.formatter(a.text))
-                if a.word:
-                    a.word = (self.formatter(a.word))
-                if a.prev_replace:
-                    a.prev_replace = self.formatter(a.prev_replace)
+            self.formatter.process_actions(new)

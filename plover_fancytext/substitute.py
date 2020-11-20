@@ -1,7 +1,7 @@
-from .fancybase import FancyBase
+from .formatterbase import FormatterBase
 
 
-class Substitute(FancyBase):
+class Substitute(FormatterBase):
 
     def __init__(self, character_map):
         self._character_map = character_map
@@ -11,7 +11,7 @@ class Substitute(FancyBase):
             return self._character_map[c]
         return c
 
-    def __call__(self, str: str) -> str:
+    def format(self, str: str) -> str:
         if str is None:
             return None
         return ''.join(self.swap(c) for c in str)

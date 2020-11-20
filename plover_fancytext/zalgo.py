@@ -1,10 +1,13 @@
+from typing import List
+from plover.formatting import _Action
+
 import random
 
 from .character_helpers import COMBINING_MARKS
-from .fancybase import FancyBase
+from .formatterbase import FormatterBase
 
 
-class Zalgo(FancyBase):
+class Zalgo(FormatterBase):
 
     def __init__(self, minimum, maximum):
         self.minimum = minimum
@@ -29,7 +32,20 @@ class Zalgo(FancyBase):
             self.translations[c] = o
         return o
 
-    def __call__(self, str) -> str:
+    def format(self, str) -> str:
         if str:
             return ''.join(self.add_combining_marks(s) for s in str)
         return None
+
+    def process_actions(self, new: List[_Action]):
+        for a in new:
+            if a.text:
+                a.text = (self.format(a.text))
+            if a.word:
+                a.word = (self.format(a.word))
+            if a.prev_replace:
+                a.prev_replace = self.format(a.prev_replace)
+        # can reset every set of actions
+        # the memoization is so that prev_replace won't throw errors
+        # if prev_replace isn't at the end of the last action's .text
+        self.reset_state()

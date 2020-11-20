@@ -179,7 +179,10 @@ BUBBLE_MAP = {
     '9': '\u2468'
 }
 
+# TODO: https://www.unicode.org/charts/PDF/UFF00.pdf
 FULLWIDTH_MAP = {
+    "!": "\uFF01",
+    "\"": "\uFF02",
     "A": "\uFF21",
     "B": "\uFF22",
     "C": "\uFF23",

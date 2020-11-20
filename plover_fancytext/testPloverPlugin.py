@@ -1,21 +1,9 @@
 import unittest
 import inspect
 
+from plover.formatting import _Action
+
 from .fancytext import PloverPlugin
-
-
-class FakeAction:
-    def __init__(self, prev_replace='', word=None, text=None, combo=None):
-        self.word = word
-        self.prev_replace = prev_replace
-        self.text = text
-        self.combo = combo
-
-    def __eq__(self, other):
-        return self.word == other.word and \
-               self.prev_replace == other.prev_replace and \
-               self.text == other.text and \
-               self.combo == other.combo
 
 
 class FakeContext():
@@ -65,40 +53,95 @@ class TestPloverPlugin(unittest.TestCase):
     def test_translate_does_nothing_if_fancy_not_set(self):
         p = self._set_up_plugin()
         old = []
-        old.append(self._get_action())
+        old.append(self._get_action_return("things"))
         new = []
-        new.append(self._get_action())
+        new.append(self._get_action_return("stuff"))
 
         p.translated(old, new)
 
         self.assertEqual(len(old), 1)
-        self.assertEqual(old[0], self._get_action())
+        self.assertEqual(old[0], self._get_action_return("things"))
         self.assertEqual(len(new), 1)
-        self.assertEqual(new[0], self._get_action())
-
-    def test_plugged_sarc(self):
-        p = self._set_up_plugin()
-        p.fancy_set(FakeContext(), "sarcasm")
-        old = []
-        new = []
-        new.append(self._get_action())
-        new.append(self._get_return_action())
-        p.translated(old, new)
-
-        self.assertEqual(new[0].text, "tEXt")
+        self.assertEqual(new[0], self._get_action_return("stuff"))
 
     def test_plugged_bubble(self):
         p = self._set_up_plugin()
         p.fancy_set(FakeContext(), "bubble")
-        old = []
-        new = []
-        new.append(self._get_action())
-        new.append(self._get_return_action())
-        p.translated(old, new)
+        new = self._get_action_return("text")
+        p.translated([], new)
 
         self.assertEqual(new[0].text, "ⓣⓔⓧⓣ")
 
-    # TODO more plugged tests
+        new = self._get_orthography_thing()
+        p.translated([], new)
+        self.assertTrue(new[0].text.endswith(new[1].prev_replace))
+
+    def test_plugged_crytyping(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "crytyping")
+        # this test .. uh makes sure it doesn't blow up?
+        p.translated([], self._get_action_return("text"))
+        new = self._get_orthography_thing()
+        p.translated([], new)
+
+        # crytyping is too random for prev_replace to work
+        self.assertIsNone(new[1].prev_replace)
+
+    def test_plugged_medieval(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "medieval")
+        new = self._get_action_return("F")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "𝕱")
+
+    def test_plugged_fullwidth(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "fullwidth")
+        new = self._get_action_return("F")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "\uFF26")
+
+    def test_plugged_uwu(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "uwu")
+        new = self._get_action_return("McNugget")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "McNyugget")
+
+    def test_plugged_uwu_intense(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "UwU")
+        new = self._get_action_return(".")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, " :3")
+
+    def test_plugged_sarcasm(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "sarcasm")
+        new = self._get_action_return("testing")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "tEStINg")
+
+    def test_plugged_upsidedown(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "upsidedown")
+        new = self._get_action_return("test")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "\u0287\u01DD\u0073\u0287")
+
+    def test_plugged_zalgo(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "zalgo")
+        new = self._get_orthography_thing()
+        p.translated([], new)
+
+        self.assertTrue(new[0].text.endswith(new[1].prev_replace))
 
     def _set_up_plugin(self) -> PloverPlugin:
         e = FakeEngine()
@@ -106,8 +149,14 @@ class TestPloverPlugin(unittest.TestCase):
         p.start()
         return p
 
-    def _get_action(self):
-        return FakeAction(text="text", word="text", prev_replace="")
+    def _get_action_return(self, str):
+        return [
+            _Action(text=str, word=str),
+            _Action(combo="Return")
+        ]
 
-    def _get_return_action(self):
-        return FakeAction(combo="Return")
+    def _get_orthography_thing(self):
+        return [
+            _Action(text="the", word="the"),
+            _Action(text="ing", word="thing", prev_replace="e")
+        ]
