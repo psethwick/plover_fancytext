@@ -1,3 +1,6 @@
+from typing import List
+from plover.formatting import _Action
+
 from .character_helpers import CONSONANT_RE, VOWEL_RE
 from .formatterbase import FormatterBase
 
@@ -49,6 +52,14 @@ class Sarcasm(FormatterBase):
         return c
 
     def format(self, str) -> str:
-        if str:
-            return ''.join(self.case_letter(s) for s in str)
-        return None
+        return ''.join(self.case_letter(s) for s in str)
+
+    def process_actions(self, new: List[_Action]):
+        for i, a in enumerate(new):
+            if a.combo == 'Return':
+                self.reset_state()
+
+            if a.text:
+                a.text = (self.format(a.text))
+            if a.prev_replace:
+                a.prev_replace = new[i-1].text[-len(a.prev_replace):]

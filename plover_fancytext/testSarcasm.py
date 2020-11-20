@@ -1,6 +1,8 @@
 import unittest
 from .sarcasm import Sarcasm
 
+from plover.formatting import _Action
+
 
 class TestSarcasm(unittest.TestCase):
 
@@ -40,3 +42,12 @@ class TestSarcasm(unittest.TestCase):
         s = Sarcasm()
         self.assertEqual(s.format("can I borrow a pencil?"),
                          "cAN i bORrOW a pENcIL?")
+
+    def test_replace_action(self):
+        s = Sarcasm()
+        a = [
+            _Action(text="previous text"),
+            _Action(prev_replace="previous text", text="new text")
+        ]
+        s.process_actions(a)
+        self.assertTrue(a[0].text.endswith(a[1].prev_replace))
