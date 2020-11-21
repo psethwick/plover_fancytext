@@ -3,7 +3,7 @@ import inspect
 
 from plover.formatting import _Action
 
-from .fancytext import PloverPlugin
+from .extensionplugin import ExtensionPlugin
 
 
 class FakeContext():
@@ -24,17 +24,17 @@ class FakeEngine():
         self.method_calls[hook] = None
 
 
-class TestPloverPlugin(unittest.TestCase):
+class TestExtensionPlugin(unittest.TestCase):
 
     def test_connect_hook(self):
         e = FakeEngine()
-        f = PloverPlugin(e)
+        f = ExtensionPlugin(e)
         f.start()
         self.assertIsNotNone(e.method_calls["translated"])
 
     def test_hook_signature(self):
         e = FakeEngine()
-        f = PloverPlugin(e)
+        f = ExtensionPlugin(e)
         f.start()
         hooked_method = e.method_calls["translated"]
         signature = inspect.signature(hooked_method)
@@ -45,7 +45,7 @@ class TestPloverPlugin(unittest.TestCase):
 
     def test_disconnect_hook(self):
         e = FakeEngine()
-        f = PloverPlugin(e)
+        f = ExtensionPlugin(e)
         f.start()
         f.stop()
         self.assertIsNone(e.method_calls["translated"])
@@ -143,9 +143,9 @@ class TestPloverPlugin(unittest.TestCase):
 
         self.assertTrue(new[0].text.endswith(new[1].prev_replace))
 
-    def _set_up_plugin(self) -> PloverPlugin:
+    def _set_up_plugin(self) -> ExtensionPlugin:
         e = FakeEngine()
-        p = PloverPlugin(e)
+        p = ExtensionPlugin(e)
         p.start()
         return p
 
