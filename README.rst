@@ -19,7 +19,7 @@ What it does
 
 Allows you to use Plover to output text in various (mostly joke, mostly unicode) text formats
 
-Examples:
+Transformers:
 
 * bubble:  ⓑⓤⓑⓑⓛⓔ
 * crytyping:   I' finne,,, h ddon'nt w,,,orry about me, re,,el yy
@@ -40,13 +40,25 @@ Installing
 3. Select 'plover_fancytext' in the list
 4. Click install
 5. Restart Plover
-6. In the Configure menu, navigate to the plugins section
-7. Enable 'plover_fancytext' and apply
+6. If you just want the retro commands, you're done!
+
+
+Extra steps for the extension plugin (which enables the
+``{:fancytext_set:<transformer>}`` commands):
+
+1. In the Configure menu, navigate to the plugins section
+2. Enable 'plover_fancytext' and apply
 
 Usage
 #####
 
-You'll need to add Plover dictionary entries to toggle on/off the modes
+You can either apply transformations with
+``{:fancytext_retro:<number of words>:<transformer>}``
+which will replace ``<number of words>`` retroactively with fancy text. Example:
+``{:fancytext_retro:2:bubble}`` to bubble-ize the last two words.
+
+Or you can use ``{:fancytext_set:<transformer>}`` to turn on
+a mode until you turn it back off!
 
 The format is ``{:fancytext_set:<mode>}`` to turn on the mode and simply ``{:fancytext_set:off}`` to turn off any mode.
 
@@ -70,24 +82,23 @@ Mode Notes
 ##########
 
 It's worth noting that these modes will not always work with Plover's
-orthography rules. Some modes will be more wrong than others.
+orthography rules. Some modes will be more wrong than others
 
 The  z̶͉a̕l̬ḡ͙o̕ m͏̎o̬̪d̜e̝̹ can also take two arguments for the minimum and maximum number
 of combining marks. Example ``{:fancytext_set:zalgo:10:15}`` for quite a lot of
-z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅ l̵̤̟̜͎͍̠̭̽̿͂ͬͩ͜ģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ. For reference the default is min=1, max=3.
+z͙͕̹̩̀͑ͮ̇̉ͣ̄͋̕ȃ̵̝͎̘̬͙̖̼͆ͤ̕͝ͅ l̵̤̟̜͎͍̠̭̽̿͂ͬͩ͜ģ̲͈͍̔ͩ̀ͣͬ̉ͨ̕̚͝o̴̢̓̓ͦ̈́̂̆͛ͭͣ. For reference the default is min=1, max=3
 
 You may want the 　ｆｕｌｌ　ｗｉｄｔｈ　mode to use a full-width space. This can be done by
 setting space in the same entry: ``{:fancytext_set:fullwidth}{MODE:SET_SPACE:　}``.
 If you do this you'll probably also want to add ``{MODE:RESET}`` to your entry which turns
-off the mode.
+off the mode
 
 This trick can also be applied to the upside down mode.
 Include unicode 202e (right to left mark) as well as a space character for um, a
 good time. You'll definitely want ``{MODE:RESET}`` on this one, and you might want
 to add unicode 202d (left to right mark) to it as well. You don't want to use
 these marks anywhere where text needs to be precisely correct, but should be
-fine in many places.
-I've not included it as part of the mode because it is definitely an acquired
+fine in many places. I've not included it as part of the mode because it is definitely an acquired
 taste and can end up with you having text backwards after you turn the mode off
 
 Contributing
