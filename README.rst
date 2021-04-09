@@ -17,7 +17,7 @@ What it does
 ############
 
 
-Allows you to use Plover to write __fancy___ text
+Allows you to use Plover to write *fancy* text
 
 Transformers:
 
