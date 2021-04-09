@@ -20,7 +20,7 @@ class Zalgo(FormatterBase):
 
     def add_combining_marks(self, c: str) -> str:
         # In order for suffix folding to work, going to need some determinism
-        # otherwise Assert Failed! in formattiny.py
+        # otherwise Assert Failed! in formatting.py
         if c in self.translations:
             return self.translations[c]
 
