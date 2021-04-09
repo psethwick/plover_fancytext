@@ -3,6 +3,7 @@ from .uwu import Uwu
 from .crytyping import CryTyping
 from .sarcasm import Sarcasm
 from .substitute import Substitute
+from .figlet import Figletise
 from .character_helpers import \
     BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP, FULLWIDTH_MAP
 
@@ -14,6 +15,7 @@ TRANSFORMERS = {
     'uwu': lambda: Uwu(intense=False),
     'UwU': lambda: Uwu(intense=True),
     'sarcasm': lambda: Sarcasm(),
+    'figlet': lambda font='slant': Figletise(font),
     'upsidedown': lambda: Substitute(UPSIDE_DOWN_MAP),
     'zalgo': lambda minimum=1, maximum=3: Zalgo(int(minimum),
                                                 int(maximum))

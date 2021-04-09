@@ -17,7 +17,7 @@ What it does
 ############
 
 
-Allows you to use Plover to output text in various (mostly joke, mostly unicode) text formats
+Allows you to use Plover to write *fancy* text
 
 Transformers:
 
@@ -30,6 +30,26 @@ Transformers:
 * uwu:  Hewwoooo <3 this aww you nyeed.
 * UwU:  uwuwuwu, buwut mowe :3 Nyote that this may get in the way of conwewsations :3 :3 :3
 * zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
+* figlet: 
+
+::
+
+    MMMMMMMM               MMMMMMMM                                  
+    M:::::::M             M:::::::M                                  
+    M::::::::M           M::::::::M                                  
+    M:::::::::M         M:::::::::M                                  
+    M::::::::::M       M::::::::::M   ooooooooooo      ooooooooooo   
+    M:::::::::::M     M:::::::::::M oo:::::::::::oo  oo:::::::::::oo 
+    M:::::::M::::M   M::::M:::::::Mo:::::::::::::::oo:::::::::::::::o
+    M::::::M M::::M M::::M M::::::Mo:::::ooooo:::::oo:::::ooooo:::::o
+    M::::::M  M::::M::::M  M::::::Mo::::o     o::::oo::::o     o::::o
+    M::::::M   M:::::::M   M::::::Mo::::o     o::::oo::::o     o::::o
+    M::::::M    M:::::M    M::::::Mo::::o     o::::oo::::o     o::::o
+    M::::::M     MMMMM     M::::::Mo::::o     o::::oo::::o     o::::o
+    M::::::M               M::::::Mo:::::ooooo:::::oo:::::ooooo:::::o
+    M::::::M               M::::::Mo:::::::::::::::oo:::::::::::::::o
+    M::::::M               M::::::M oo:::::::::::oo  oo:::::::::::oo 
+    MMMMMMMM               MMMMMMMM   ooooooooooo      ooooooooooo   
 
 Installing
 ##########
@@ -100,6 +120,9 @@ to add unicode 202d (left to right mark) to it as well. You don't want to use
 these marks anywhere where text needs to be precisely correct, but should be
 fine in many places. I've not included it as part of the mode because it is definitely an acquired
 taste and can end up with you having text backwards after you turn the mode off
+
+Figlet is only set up to work with ``fancytext_retro``. This is because the output is multi-line text
+for individual words. It takes a ``font`` argument, you can use most `figlet fonts <http://www.figlet.org/examples.html>`_
 
 Contributing
 ############
