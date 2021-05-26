@@ -5,10 +5,11 @@ from .sarcasm import Sarcasm
 from .substitute import Substitute
 from .figlet import Figletise
 from .character_helpers import \
-    BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP, FULLWIDTH_MAP
+    BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP, FULLWIDTH_MAP, MORSE_MAP
 
 TRANSFORMERS = {
     'bubble': lambda: Substitute(BUBBLE_MAP),
+    'morse': lambda: Substitute(MORSE_MAP),
     'crytyping': lambda: CryTyping(),
     'medieval': lambda: Substitute(MEDIEVAL_MAP),
     'fullwidth': lambda: Substitute(FULLWIDTH_MAP),
