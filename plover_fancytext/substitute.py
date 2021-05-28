@@ -3,7 +3,8 @@ from .formatterbase import FormatterBase
 
 class Substitute(FormatterBase):
 
-    def __init__(self, character_map):
+    def __init__(self, character_map, joiner=''):
+        self._joiner = joiner
         self._character_map = character_map
 
     def swap(self, c: str) -> str:
@@ -14,4 +15,4 @@ class Substitute(FormatterBase):
     def format(self, str: str) -> str:
         if str is None:
             return None
-        return ''.join(self.swap(c) for c in str)
+        return self._joiner.join(self.swap(c) for c in str)
