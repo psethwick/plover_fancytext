@@ -143,6 +143,14 @@ class TestExtensionPlugin(unittest.TestCase):
 
         self.assertTrue(new[0].text.endswith(new[1].prev_replace))
 
+    def test_plugged_morse(self):
+        p = self._set_up_plugin()
+        p.fancy_set(FakeContext(), "morse")
+        new = self._get_action_return("test")
+        p.translated([], new)
+
+        self.assertEqual(new[0].text, "- . ... -")
+
     def _set_up_plugin(self) -> ExtensionPlugin:
         e = FakeEngine()
         p = ExtensionPlugin(e)
