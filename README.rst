@@ -25,6 +25,7 @@ Transformers:
 * crytyping:   I' finne,,, h ddon'nt w,,,orry about me, re,,el yy
 * fullwidth:  ｖａｐｏｒｗａｖｅ
 * medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
+* morse: ... --- ...
 * sarcasm:  wELl ThIs IS cONvEnIeNt
 * upsidedown:  ndsᴉpǝ poʍu
 * uwu:  Hewwoooo <3 this aww you nyeed.
