@@ -30,6 +30,7 @@ Transformers:
 * upsidedown:  ndsᴉpǝ poʍu
 * uwu:  Hewwoooo <3 this aww you nyeed.
 * UwU:  uwuwuwu, buwut mowe :3 Nyote that this may get in the way of conwewsations :3 :3 :3
+# smallcaps: Sᴍᴀʟʟ Cᴀᴘs
 * zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 * figlet: 
 
