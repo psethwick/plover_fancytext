@@ -466,7 +466,7 @@ BLACKBOARD_BOLD_MAP = {
     "6": "𝟞",
     "7": "𝟟",
     "8": "𝟠",
-    "9": "𝟡",
+    "9": "𝟡"
 }
 
 COMBINING_MARKS = [
