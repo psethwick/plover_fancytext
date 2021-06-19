@@ -21,16 +21,18 @@ Allows you to use Plover to write *fancy* text
 
 Transformers:
 
+* blackboardbold: 𝔹𝕝𝕒𝕔𝕜𝕓𝕠𝕒𝕣𝕕 𝔹𝕠𝕝𝕕, 𝕒𝕜𝕒 𝔻𝕠𝕦𝕓𝕝𝕖 𝕊𝕥𝕣𝕦𝕔𝕜
 * bubble:  ⓑⓤⓑⓑⓛⓔ
 * crytyping:   I' finne,,, h ddon'nt w,,,orry about me, re,,el yy
 * fullwidth:  ｖａｐｏｒｗａｖｅ
 * medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
 * morse: ... --- ...
 * sarcasm:  wELl ThIs IS cONvEnIeNt
+* script: 𝓢𝓬𝓻𝓲𝓹𝓽 𝓯𝓸𝓻 𝓽𝓱𝓪𝓽 𝓱𝓪𝓷𝓭𝔀𝓻𝓲𝓽𝓽𝓮𝓷 𝓵𝓸𝓸𝓴
+* smallcaps: Sᴍᴀʟʟ Cᴀᴘs
 * upsidedown:  ndsᴉpǝ poʍu
 * uwu:  Hewwoooo <3 this aww you nyeed.
 * UwU:  uwuwuwu, buwut mowe :3 Nyote that this may get in the way of conwewsations :3 :3 :3
-* smallcaps: Sᴍᴀʟʟ Cᴀᴘs
 * zalgo:  z̓ä́l̘g̩̚o͡t́èx͓͠ẗ̬
 * figlet: 
 
