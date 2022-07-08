@@ -7,7 +7,7 @@ from .figlet import Figletise
 from .character_helpers import \
     BUBBLE_MAP, MEDIEVAL_MAP, UPSIDE_DOWN_MAP,\
     FULLWIDTH_MAP, MORSE_MAP, SMALLCAPS_MAP,\
-    SCRIPT_MAP, BLACKBOARD_BOLD_MAP
+    SCRIPT_MAP, BLACKBOARD_BOLD_MAP, MONOSPACE_MAP
 
 TRANSFORMERS = {
     'bubble': lambda: Substitute(BUBBLE_MAP),
@@ -23,6 +23,7 @@ TRANSFORMERS = {
     'smallcaps': lambda: Substitute(SMALLCAPS_MAP),
     'script': lambda: Substitute(SCRIPT_MAP),
     'blackboardbold': lambda: Substitute(BLACKBOARD_BOLD_MAP),
+    'monospace': lambda: Substitute(MONOSPACE_MAP),
     'zalgo': lambda minimum=1, maximum=3: Zalgo(int(minimum),
                                                 int(maximum))
 }
