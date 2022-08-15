@@ -26,6 +26,7 @@ Transformers:
 * crytyping:   I' finne,,, h ddon'nt w,,,orry about me, re,,el yy
 * fullwidth:  ｖａｐｏｒｗａｖｅ
 * medieval:  𝕸𝖊𝖉𝖎𝖊𝖛𝖆𝖑
+* monospace:  𝚖𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎
 * morse: ... --- ...
 * sarcasm:  wELl ThIs IS cONvEnIeNt
 * script: 𝓢𝓬𝓻𝓲𝓹𝓽 𝓯𝓸𝓻 𝓽𝓱𝓪𝓽 𝓱𝓪𝓷𝓭𝔀𝓻𝓲𝓽𝓽𝓮𝓷 𝓵𝓸𝓸𝓴
