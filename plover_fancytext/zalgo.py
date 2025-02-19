@@ -24,12 +24,12 @@ class Zalgo(FormatterBase):
         if c in self.translations:
             return self.translations[c]
 
+        o = c
         for m in random.sample(
                 COMBINING_MARKS,
                 random.randrange(self.minimum, self.maximum)):
-            o = c
             o += m
-            self.translations[c] = o
+        self.translations[c] = o
         return o
 
     def format(self, str) -> str:
